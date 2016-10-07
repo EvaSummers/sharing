@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery+css3鼠标悬停显示提示框按钮演示_大头网</title>
+
+<link type="text/css" rel="stylesheet" href="css/datouwang.css">
+
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.link .button').hover(function(){
+		var title=$(this).attr('data-title');
+		$('.tip em').text(title);
+		var pos=$(this).offset().left;
+		var dis=($('.tip').outerWidth()-$(this).outerWidth())/2;
+		var l=pos-dis;
+		$('.tip').css({'left':l+'px'}).animate({'top':180,'opacity':1},300);
+	},function(){
+		$('.tip').animate({'top':160,'opacity':0},300);
+	})
+})
+</script>
+
+</head>
+<body>
+<!-- 代码 开始 -->
+<div class="box">
+	<div class="link mission-link">
+		<span class="icon animated"></span>
+		<a class="button" data-title="My mission is clear">
+		<span class="line line-top"></span>
+		<span class="line line-right"></span>
+		<span class="line line-bottom"></span>
+		<span class="line line-left"></span>
+		Mission
+		</a>
+	</div>
+	<div class="link play-link">
+		<span class="icon animated"></span>
+		<a class="button" data-title="This is my playground">
+		<span class="line line-top"></span>
+		<span class="line line-right"></span>
+		<span class="line line-bottom"></span>
+		<span class="line line-left"></span>
+		Play
+		</a>
+	</div>
+	<div class="link touch-link">
+		<span class="icon animated"></span>
+		<a class="button" data-title="This is my playground demos">
+		<span class="line line-top"></span>
+		<span class="line line-right"></span>
+		<span class="line line-bottom"></span>
+		<span class="line line-left"></span>
+		Touch
+		</a>
+	</div>
+	<p class="tip"><em></em><span></span></p>
+</div>
+<!-- 代码 结束 -->
+
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';color:#ffffff">
+<p>来源：<a href="http://www.datouwang.com/" target="_blank">大头网</a></p>
+<p>转载请注明出处，此代码仅供学习交流，请勿用于商业用途。</p>
+<p><script src="http://www.datouwang.com/img/js/demo_ad.js"></script><center style="display:none"><script src="http://www.datouwang.com/img/js/demo_tj.js"></script></center></p>
+</div>
+
+</body>
+</html>
