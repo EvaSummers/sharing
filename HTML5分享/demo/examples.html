@@ -47,7 +47,7 @@
       border: 1px solid #000;
       margin: 10px;
     }
-
+    #div1 {width:360px;height:360px;padding:10px;border:1px solid #aaaaaa;}
   </style>
 </head>
 <body>
@@ -73,8 +73,71 @@
   <audio src="LetHerGo-Passenger.mp3" type="audio/mpeg" controls="controls"></audio>
 
   <canvas id= "myCanvas"></canvas>
+  <br/>
+   <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mrow>      
+      <mrow>
+         <msup>
+            <mi>x</mi>
+            <mn>2</mn>
+         </msup>   
+         <mo>+</mo>
+         <mrow>
+            <mn>4</mn>
+            <mo>⁢</mo>
+            <mi>x</mi>
+         </mrow>   
+         <mo>+</mo>
+         <mn>4</mn>
+      </mrow>
+      <mo>=</mo>
+      <mn>0</mn>
+    </mrow>
+  </div>
+  <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div> 
+  <br> 
+  <img id="drag1" src="jl.png" draggable="true" ondragstart="drag(event)" width="359" height="352"> 
+  <br>
+  <input list="browsers">
+  <datalist id="browsers">
+    <option value="Internet Explorer">
+    <option value="Firefox">
+    <option value="Chrome">
+    <option value="Opera">
+    <option value="Safari">
+  </datalist>
+
+  <div style="height:100px;width:100%;background:#eee;margin:20px auto;padding:20px;">
+    <form action="demo_keygen.asp" method="get">
+      用户名: <input type="text" name="usr_name">
+      加密: <keygen name="security">
+      <input type="submit">
+    </form>
+    <form style="margin:20px;" oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
+      <input type="range" id="a" value="50">100 +
+      <input type="number" id="b" value="50">=
+      <output name="x" for="a b"></output>
+    </form>
   </div>
 </body> 
 <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
 <script type="text/javascript" src="js/js.js"></script>
+<script type="text/javascript">
+  function allowDrop(ev) 
+  { 
+      ev.preventDefault(); 
+  } 
+
+  function drag(ev) 
+  { 
+      ev.dataTransfer.setData("Text",ev.target.id); 
+  } 
+
+  function drop(ev) 
+  { 
+      ev.preventDefault(); 
+      var data=ev.dataTransfer.getData("Text"); 
+      ev.target.appendChild(document.getElementById(data)); 
+  } 
+</script>
 </html>
